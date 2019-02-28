@@ -1,7 +1,118 @@
 $font-stack: Helvetica, sans-serif;
 $primary-font-color: red;
 
+// *{
+//   border: 1px solid black;
+// }
+
 body {
+  // background-color: black;
   font: 100% $font-stack;
   color: $primary-font-color;
+  display: flex;
+  justify-content: center;
+}
+
+
+hr {
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  border-bottom: 1px solid black;
+}
+
+.header {
+  background-image: radial-gradient(circle, #4C7677, #254142);
+  background-repeat: no-repeat;
+  width: 100%;
+  text-align: center;
+  #timer {
+    font-size: 60px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+
+    h4 {
+      font-size: .6em;
+      text-align: center;
+    }
+  }
+}
+
+
+.container {
+  display: flex;
+  max-width: 1024px;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.title{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.about {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.avialblePlatforms {
+  justify-content: center;
+  display: flex;
+  width: 75%;
+  border: 1px solid red;
+  flex-wrap: wrap;
+  h3 {
+    display: flex;
+    justify-content: center;
+    width: 49%;
+  };
+}
+
+
+.reviewsDiv {
+  // margin-top: 20px;
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  .leftColumnReview {
+    width: 50%;
+    img {
+      width: 90%;
+      // height: 50px;
+    }
+  }
+  .rightColumnReview {
+    width: 50%;
+    img {
+      width:90%;
+      // height: 50px;
+    }
+  }
+}
+
+.studioDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  .leftStu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+    text-align: center;
+    }
+  }
+  .rightStu{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      text-align: center;
+    }
+  }
 }
