@@ -1,14 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-$primary-font-color: red;
+@import "mixins";
 
-// *{
-//   border: 1px solid black;
+@font-face {
+  font-family: 'Run';
+  src: url("../assets/fonts/RunAway.ttf") format("truetype");
+}
+// * {
+//   border: 1px solid red;
 // }
+
+//Variables:
+$font-main: 'Run', sans-serif;
+$primary-font-color: white;
+
+*{
+  margin:0;
+  padding:0;
+  // border: 1px solid pink;
+}
 
 body {
   background-color: black;
   color: $primary-font-color;
+  font-family:'Open Sans', sans-serif;
+  letter-spacing: 2px;
+  line-height: 2em;
   display: flex;
   justify-content: center;
 }
@@ -31,25 +48,21 @@ hr {
   flex-direction: column;
   align-items: center;
   background-image: radial-gradient(circle, #4C7677, #254142);
-  background-repeat: no-repeat;
-  background-size: 100vw;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 30px;
+  font-size: 2.5em;
   text-align: center;
   img {
     width:100vw;
   }
   #timer {
-    width:60%;
-    font-size: 60px;
-    padding: 10px;
+    width:80%;
+    font-size: 1.6em;
+    padding: 3%;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     .timerBoxes {
-      // border: 1px solid white;
-      padding: 20px;
+      padding-top: 20px;
       border-radius: 5px;
       width: 18%;
       background-color: rgba(255,255,255,.30)
@@ -58,7 +71,8 @@ hr {
     h4 {
       font-size: .6em;
       text-align: center;
-      font-family: 'Open Sans', sans-serif;
+      padding-top: 20%;
+      padding-bottom:20%;
     }
 }
 
@@ -66,6 +80,7 @@ hr {
 .title{
   margin-top: 50px;
   margin-bottom: 50px;
+  font-family: $font-main;
 }
 
 .middleContent {
@@ -82,15 +97,27 @@ hr {
   background-color: black;
   padding: 20px;
   width: 90%;
-  hr {
-    width: 100%;
-    border-bottom: 1px solid black;
+    hr {
+      width: 100%;
+      border-bottom: 1px solid black;
+    }
+    h1 {
+      font-size: 3em;
+      font-family: $font-main;
+      padding-bottom: 3%;
+    }
   }
+
+h3 {
+  font-size: 3em;
+  font-family: $font-main;
+  padding-bottom: 3%;
+  padding-top:3%;
 }
 .availablePlatforms {
   justify-content: center;
   display: flex;
-  width: 75%;
+  width: 90%;
   border: 1px solid red;
   flex-wrap: wrap;
   padding: 10px;
@@ -99,7 +126,13 @@ hr {
   background-color: #FF6300;
   color: white;
   border-radius: 10px;
-  h3 {
+  img {
+    padding-left: 12.5%;
+    padding-right: 12.5%;
+    width: 10%;
+    height: 8%;
+  }
+  h2 {
     display: flex;
     justify-content: center;
     width: 49%;
@@ -111,24 +144,24 @@ hr {
   width: 90%;
   display: flex;
   flex-direction: column;
+  padding-top: 3%;
+  padding-bottom: 3%;
   p {
     padding-left: 20px;
     padding-right: 20px;
   }
+
   .leftColumnReview {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include row-center;
     padding-bottom: 20px;
     img {
       width: 40%;
       // height: 50px;
     }
+
   }
   .rightColumnReview {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include row-center;
     padding-bottom: 20px;
     img {
       width:40%;
@@ -138,33 +171,69 @@ hr {
 }
 
 .studioDiv {
-  width: 90%;
+  width: 100vw;
   height:560px;
-
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  @include center-content;
+  margin-top: 15%;
   background-image: url("../assets/images/blackforest.png");
   .leftStu{
     display: flex;
     flex-direction: column;
     align-items: center;
-    h2{
+    padding-right: 5%;
+    h2 {
     text-align: center;
+    font-family: $font-main;
     }
   }
+
   .rightStu{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-left: 5%;
+    font-family: $font-main;
     h2 {
       text-align: center;
     }
   }
 }
 
-// @media screen and (min-width: 300px) {
-//   #timer{
-//     display: none;
+// @media screen and (max-width: 1024px) and (min-width:768px) {
+//       .timerBoxes {
+//     width: 100vw;
+//     font-size: 1.4rem;
+//     margin: 3vw;
+//     // h4 {
+//     // }
 //   }
 // }
+
+@media screen and (max-width: 768px) and (min-width:320px) {
+  .studioDiv {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .rightStu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .leftStu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .rightColumnReview{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .leftColumnReview {
+    justify-content: center;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+  }
+}
