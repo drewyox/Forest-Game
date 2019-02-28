@@ -1,4 +1,5 @@
-$font-stack: Helvetica, sans-serif;
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 $primary-font-color: red;
 
 // *{
@@ -6,66 +7,98 @@ $primary-font-color: red;
 // }
 
 body {
-  // background-color: black;
-  font: 100% $font-stack;
+  background-color: black;
   color: $primary-font-color;
   display: flex;
   justify-content: center;
 }
-
-
-hr {
-  display: flex;
-  justify-content: center;
-  width: 95%;
-  border-bottom: 1px solid black;
-}
-
-.header {
-  background-image: radial-gradient(circle, #4C7677, #254142);
-  background-repeat: no-repeat;
-  width: 100%;
-  text-align: center;
-  #timer {
-    font-size: 60px;
-    padding: 10px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 80%;
-
-    h4 {
-      font-size: .6em;
-      text-align: center;
-    }
-  }
-}
-
 
 .container {
   display: flex;
   max-width: 1024px;
   align-items: center;
   flex-direction: column;
-
 }
+
+hr {
+  width: 90%;
+  border-bottom: 1px solid black;
+  background-color: black;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: radial-gradient(circle, #4C7677, #254142);
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  text-align: center;
+  img {
+    width:100vw;
+  }
+  #timer {
+    width:60%;
+    font-size: 60px;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .timerBoxes {
+      // border: 1px solid white;
+      padding: 20px;
+      border-radius: 5px;
+      width: 18%;
+      background-color: rgba(255,255,255,.30)
+    }
+    }
+    h4 {
+      font-size: .6em;
+      text-align: center;
+      font-family: 'Open Sans', sans-serif;
+    }
+}
+
 
 .title{
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
+.middleContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+}
+
 .about {
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: black;
+  padding: 20px;
+  width: 90%;
+  hr {
+    width: 100%;
+    border-bottom: 1px solid black;
+  }
 }
-.avialblePlatforms {
+.availablePlatforms {
   justify-content: center;
   display: flex;
   width: 75%;
   border: 1px solid red;
   flex-wrap: wrap;
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #FF6300;
+  color: white;
+  border-radius: 10px;
   h3 {
     display: flex;
     justify-content: center;
@@ -75,30 +108,43 @@ hr {
 
 
 .reviewsDiv {
-  // margin-top: 20px;
-  padding: 30px;
+  width: 90%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  p {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   .leftColumnReview {
-    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 20px;
     img {
-      width: 90%;
+      width: 40%;
       // height: 50px;
     }
   }
   .rightColumnReview {
-    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 20px;
     img {
-      width:90%;
+      width:40%;
       // height: 50px;
     }
   }
 }
 
 .studioDiv {
+  width: 90%;
+  height:560px;
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  background-image: url("../assets/images/blackforest.png");
   .leftStu{
     display: flex;
     flex-direction: column;
@@ -116,3 +162,9 @@ hr {
     }
   }
 }
+
+// @media screen and (min-width: 300px) {
+//   #timer{
+//     display: none;
+//   }
+// }
